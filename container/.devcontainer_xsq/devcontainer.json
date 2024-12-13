@@ -1,12 +1,12 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/anaconda
 {
-	"name": "swift_2_26",
+	"name": "easyllm_kit",
 	// "build": { 
 	// 	"context": "..",
 	// 	"dockerfile": "Dockerfile"
 	// }
-	"image": "modelscope-registry.cn-hangzhou.cr.aliyuncs.com/modelscope-repo/modelscope:ubuntu22.04-cuda12.4.0-py310-torch2.4.0-1.21.0-LLM",
+	"image": "nvcr.io/nvidia/pytorch:24.07-py3",
     "customizations": {
         "vscode": {
             "extensions": [
@@ -16,7 +16,7 @@
             ]
         }
     },
-    "postCreateCommand": "",
+    "postCreateCommand": "pip install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple/",
 
 	"runArgs": ["--name", "${localEnv:USER}_dev"],
 
